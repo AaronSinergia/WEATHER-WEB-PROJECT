@@ -6,7 +6,7 @@ import './index.css'
 
 import Home from "../src/pages/Home.jsx"
 import SelectWeather from "../src/pages/SelectWeather.jsx"
-import NotFound from "../src/pages/SelectWeather.jsx"
+import {NotFound} from "../src/pages/NotFound.jsx"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

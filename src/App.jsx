@@ -6,9 +6,9 @@ function App() {
   return (
     <div className='App'>
       <div className='navbar'>
-        <nav>
+        <nav className='nav_title'>
           <NavLink to="">HOME</NavLink>
-          <NavLink to="/select_weather">Select Weather</NavLink>
+          <NavLink to="/select_weather">SELECT OTHER CITY</NavLink>
         </nav>
       </div>
       <main className='outlet'>
