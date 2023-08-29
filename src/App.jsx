@@ -1,5 +1,7 @@
 import './App.css'
 import {NavLink, Outlet} from 'react-router-dom'
+import { Footer } from './components/Footer'
+import { CityBucle } from './components/cityList'
 
 
 function App() {
@@ -8,13 +10,23 @@ function App() {
       <div className='navbar'>
         <nav className='nav_title'>
           <NavLink to="">HOME</NavLink>
-          <NavLink to="/select_weather">SELECT OTHER CITY</NavLink>
+          <CityBucle />
+          {/* <select className="select_weather">
+            <option disabled selected>SELECT OTHER CITY</option>
+            <option value=''>Sabadell</option>
+            <option value=''>Rubí</option>
+            <option value=''>Barcelona</option>
+            <option value=''>Badalona</option>
+            <option value=''>Mataró</option>
+          </select> */}
         </nav>
       </div>
       <main className='outlet'>
         <Outlet />
       </main>
-      <footer className="footer">© Created by Aaron Carrasco for RockTheCode</footer>
+
+      <Footer />
+
     </div>
   )
 }
