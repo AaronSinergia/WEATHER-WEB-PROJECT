@@ -5,7 +5,6 @@ import App from './App.jsx'
 import './index.css'
 
 import Home from "../src/pages/Home.jsx"
-import SelectWeather from "../src/pages/SelectWeather.jsx"
 import {NotFound} from "../src/pages/NotFound.jsx"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,7 +13,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path='/' element={<App/>}>
           <Route index element={<Home/>} />
-          <Route path='select_weather' element={<SelectWeather/>} />
           <Route path='*' element={<NotFound/>} />
         </Route>
       </Routes>

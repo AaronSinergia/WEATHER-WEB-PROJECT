@@ -1,15 +1,12 @@
-import React, { useState } from 'react'
-import ApiWeather from '../api/ApiWeather'
+import React from 'react'
+import ChooseWeatherView from '../components/WeatherChoose/ChooseWeatherView'
+
 
 const Home = () => {
-  const [weatherToday, setWeatherToday] = useState(null)
 
   return (
     <>
-      <header>
-        <h2 className='home_title'>CONSULTA EL CLIMA PARA EL DIA DE HOY</h2>
-      </header>
-      <ApiWeather weatherToday={weatherToday} setWeatherToday={setWeatherToday}/>
+      <ChooseWeatherView />
     </>
   )
 }

@@ -48,7 +48,7 @@ const ApiWeather = ({weatherToday, setWeatherToday}) => {
         <img className='weather_icon' src={`http://openweathermap.org/img/w/${weatherToday.weather[0].icon}.png`} alt="weather_icon" />
         <p className='temp'>TEMPERATURA: {weatherToday.main.temp}ºC</p>
         <p className='humidity'>HUMEDAD: {weatherToday.main.humidity}%</p>
-        <p className='visibility'>VISIBILIDAD PARA HOY: {weatherToday.visibility}m </p>
+        <p className='visibility'>VISIBILIDAD PARA HOY: {weatherToday.visibility} metros </p>
         <p className='wind'>VELOCIDAD DEL VIENTO: {weatherToday.wind.speed} metros/hora </p>
       </div>
       )}

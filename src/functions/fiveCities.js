@@ -1,6 +1,4 @@
-import React from 'react'
-
-const CityList = [
+export const FiveCities = [
   {
     city: 'Sabadell',
     description: 'NUBES DISPERSAS',
@@ -42,20 +40,3 @@ const CityList = [
     wind: '1.11',
   },
 ];
-
-export const CityBucle = () => {
-  const createSelect = document.createElement('select')
-
-  for (let i = 0; i < CityList.length; i++) {
-    const citysLited = CityList[i].citysLited;
-
-    const createOpt= document.createElement('option')
-    createOpt.value = citysLited;
-    createOpt.text = citysLited;
-    createSelect.appendChild(createOpt)
-  }
-}
-
-
-
-export default CityList
