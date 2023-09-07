@@ -8,7 +8,8 @@ function App() {
     <div className='App'>
       <div className='navbar'>
         <nav className='nav_title'>
-          <NavLink to="">INICIO</NavLink>
+          <NavLink to=''>INICIO</NavLink>
+          <NavLink to='/five_days_forecast'>PREVISION A 5 DIAS VISTA</NavLink>
         </nav>
       </div>
       <main className='outlet'>

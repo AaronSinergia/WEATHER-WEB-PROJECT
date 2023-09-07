@@ -6,6 +6,7 @@ import './index.css'
 
 import Home from "../src/pages/Home.jsx"
 import {NotFound} from "../src/pages/NotFound.jsx"
+import FiveDaysForecast from './pages/FiveDaysForecast.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path='/' element={<App/>}>
           <Route index element={<Home/>} />
+          <Route path='/five_days_forecast' element={<FiveDaysForecast />} />
           <Route path='*' element={<NotFound/>} />
         </Route>
       </Routes>
