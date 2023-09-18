@@ -4,3 +4,75 @@
   padding: 2rem;
   text-align: center;
 }
+
+.App {
+  background-image: linear-gradient(to bottom, #d9e8ef, #3b93e6);
+  border-radius: 2%;
+  margin-top: 20%;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.18);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.nav_title {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin: 0 60px 0 60px;
+  font-size: 12px;
+}
+
+.btn_ini {
+  margin: 2px;
+}
+
+.btn_prev {
+  margin: 2px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(241, 231, 39);
+}
+
+.city_name {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 30px;
+}
+
+.temp {
+  margin: 0;
+  font-size: 60px;
+}
+
+.weather_status {
+  margin-bottom: 0;
+}
+
+.weather_icon {
+  width: 30%;
+}
+
+.humidity {
+  margin: 0;
+}
+
+.five_cities {
+  margin: 35px 20px 20px 20px;
+  cursor: pointer;
+}
+
+.return_to {
+  font-size: 15px;
+}
+
+.footer {
+  margin: 20px 0 10px 0;
+  font-size: 10px;
+}

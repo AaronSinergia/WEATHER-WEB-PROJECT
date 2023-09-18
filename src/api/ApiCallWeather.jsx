@@ -17,7 +17,7 @@ const ApiWeather = ({weatherToday, setWeatherToday}) => {
         return response.json();
       })
       .then((data) => {
-        setWeatherToday(data);
+        setWeatherToday({ ...data, name: data.name });
       })
       .catch((error) => {
         console.error('Fetch error:', error)
@@ -34,7 +34,8 @@ const ApiWeather = ({weatherToday, setWeatherToday}) => {
         });
       },
       (error) => {
-        console.error('Error en la geolocalización:', error);
+        const EnableLocationPlease = alert('Error en los permisos de geolocalización, actívalos en tu navegador')
+        console.error('Error en los permisos de geolocalización, actívalos en tu navegador:', error);
       }
     );
   }, [])
@@ -42,17 +43,17 @@ const ApiWeather = ({weatherToday, setWeatherToday}) => {
   
   return (
     <>
-      {weatherToday && (
-      <div className='weather_today_data'>
-        <p className='city_name'>Estás consultando el clima en tu ubicación: {weatherToday.name}</p>
-        <p className='weather_status'>{weatherToday.weather[0].description.toUpperCase()}</p>
-        <img className='weather_icon' src={`http://openweathermap.org/img/w/${weatherToday.weather[0].icon}.png`} alt="weather_icon" />
-        <p className='temp'>TEMPERATURA: {weatherToday.main.temp}ºC</p>
-        <p className='humidity'>HUMEDAD: {weatherToday.main.humidity}%</p>
-        <p className='visibility'>VISIBILIDAD PARA HOY: {weatherToday.visibility} metros </p>
-        <p className='wind'>VELOCIDAD DEL VIENTO: {weatherToday.wind.speed} metros/hora </p>
-      </div>
-      )}
+        {weatherToday && (
+          <div className='weather_today_data'>
+          <p className='city_name'> {weatherToday.name}</p>
+          <p className='temp'>{weatherToday.main.temp}º</p>
+          <p className='weather_status'>{weatherToday.weather[0].description.toUpperCase()}</p>
+          <img className='weather_icon' src={`http://openweathermap.org/img/w/${weatherToday.weather[0].icon}.png`} alt="weather_icon" />
+          <p className='humidity'>HUMEDAD: {weatherToday.main.humidity}%</p>
+          <p className='visibility'>VISIBILIDAD: {weatherToday.visibility} metros </p>
+          <p className='wind'>VELOCIDAD DEL VIENTO: {weatherToday.wind.speed} metros/hora </p>
+        </div>
+        )}
     </>
   );
 };

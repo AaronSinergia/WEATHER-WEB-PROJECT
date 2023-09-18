@@ -28,14 +28,14 @@ const OneOfFiveCities = ({selectedCity, weatherData, setWeatherData}) => {
   return (
     <>
      {weatherData && (
-      <div className='weather_today_data'>
-  <p className='city_name'>Clima de la ciudad seleccionada: {weatherData.name}</p>
-        <p className='weather_status'>{weatherData.weather[0].description.toUpperCase()}</p>
-        <img className='weather_icon' src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt="weather_icon" />
-        <p className='temp'>TEMPERATURA: {weatherData.main.temp}ºC</p>
-        <p className='humidity'>HUMEDAD: {weatherData.main.humidity}%</p>
-        <p className='visibility'>VISIBILIDAD PARA HOY: {weatherData.visibility} metros </p>
-        <p className='wind'>VELOCIDAD DEL VIENTO: {weatherData.wind.speed} metros/hora </p>
+       <div className='weather_today_data'>
+          <p className='city_name'> {weatherData.name}</p>
+          <p className='temp'> {weatherData.main.temp}º</p>
+          <p className='weather_status'>{weatherData.weather[0].description.toUpperCase()}</p>
+          <img className='weather_icon' src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt="weather_icon" />
+          <p className='humidity'>HUMEDAD: {weatherData.main.humidity}%</p>
+          <p className='visibility'>VISIBILIDAD: {weatherData.visibility} metros </p>
+          <p className='wind'>VELOCIDAD DEL VIENTO: {weatherData.wind.speed} metros/hora </p>
       </div>
       )}
     </>

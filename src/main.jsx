@@ -6,7 +6,7 @@ import './index.css'
 
 import Home from "../src/pages/Home.jsx"
 import {NotFound} from "../src/pages/NotFound.jsx"
-import FiveDaysForecast from './pages/FiveDaysForecast.jsx'
+import FiveDaysForecast from './pages/LocationFiveDaysForecast.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

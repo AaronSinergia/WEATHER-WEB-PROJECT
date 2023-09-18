@@ -35,7 +35,8 @@ const FiveDaysApiLocation = ({fiveDaysLocation, setFiveDaysLocation}) => {
             });
           },
           (error) => {
-            console.error('Error en la geolocalización:', error);
+            const EnableLocationPlease = alert('Error en los permisos de geolocalización, actívalos en tu navegador')
+            console.error('Error en los permisos de geolocalización, actívalos en tu navegador:', error);
           }
         );
       }, [])
@@ -43,16 +44,15 @@ const FiveDaysApiLocation = ({fiveDaysLocation, setFiveDaysLocation}) => {
   return (
     <>
          {fiveDaysLocation && (
-        <div className="weather_data">
-          <p className="city_name">
-            Estás consultando el clima en tu ubicación: {fiveDaysLocation.city.name}
-          </p>
+        <div className="weather_today_data">
+          <p className="city_name">{fiveDaysLocation.city.name}</p>
 
           {fiveDaysLocation.list.slice(0, 5).map((item, index) => (
             <div key={index} className="day_forecast">
               <p className="date">
                 Fecha: {new Date(item.dt * 1000).toLocaleDateString('es-ES')}
               </p>
+              <p className="temp">{item.main.temp}º</p>
               <p className="weather_status">
                 {item.weather[0].description.toUpperCase()}
               </p>
@@ -61,7 +61,6 @@ const FiveDaysApiLocation = ({fiveDaysLocation, setFiveDaysLocation}) => {
                 src={`http://openweathermap.org/img/w/${item.weather[0].icon}.png`}
                 alt="weather_icon"
               />
-              <p className="temp">TEMPERATURA: {item.main.temp}ºC</p>
               <p className="humidity">HUMEDAD: {item.main.humidity}%</p>
               <p className="visibility">
                 VISIBILIDAD: {item.visibility} metros

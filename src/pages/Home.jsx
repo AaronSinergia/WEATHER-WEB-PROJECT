@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
-import ApiWeather from '../api/ApiWeather'
-import SelectedOneOfFiveCities from '../components/FiveCitiesList/SelectedOneOfFiveCities'
-import OneOfFiveCities from '../components/FiveCitiesList/OneOfFiveCities'
+import React, {lazy, useState} from 'react'
+import ApiWeather from '../api/ApiCallWeather'
+import SelectedOneOfFiveCities from '../components/SelectList/CompListOfFiveCities'
 
+const OneOfFiveCities = lazy(()=> import('../api/ApiCallListFiveCities'))
 
 const Home = () => {
   const [weatherToday, setWeatherToday] = useState(null)
@@ -15,14 +15,15 @@ const Home = () => {
   
   return (
     <>
-      <header>
-        <h2 className='home_title'>TU CLIMA PARA HOY</h2>
-      </header>
+      <React.Suspense fallback={<h2>Cargando....</h2>}>
         {renderedComp ? renderedComp : <ApiWeather weatherToday={weatherToday} setWeatherToday={setWeatherToday} />}
         <SelectedOneOfFiveCities selectedCity={selectedCity} setSelectedCity={setSelectedCity}/>
-        <a href="/">
-          🔄 Vuelve a consultar el clima en tu ubicación🔄
-        </a>
+        <button>
+          <a class='return_to' href="/">
+            🔄 Vuelve al clima en tu ubicación 
+          </a>
+        </button>
+      </React.Suspense>
     </>
   )
 }
