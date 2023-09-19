@@ -22,7 +22,7 @@ const FiveDaysForecast = () => {
         {renderedComp ? renderedComp : <FiveDaysApiLocation fiveDaysLocation={fiveDaysLocation} setFiveDaysLocation={setFiveDaysLocation}/>}
         <SelectedOneOfFiveCities selectedCity={selectedCity} setSelectedCity={setSelectedCity}/>
         <button>
-          <a class='return_to' href="/five_days_forecast">
+          <a className='return_to' href="/five_days_forecast">
               🔄 Vuelve al clima en tu ciudad 5 días vista
           </a>
         </button>

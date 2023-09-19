@@ -19,7 +19,7 @@ const Home = () => {
         {renderedComp ? renderedComp : <ApiWeather weatherToday={weatherToday} setWeatherToday={setWeatherToday} />}
         <SelectedOneOfFiveCities selectedCity={selectedCity} setSelectedCity={setSelectedCity}/>
         <button>
-          <a class='return_to' href="/">
+          <a className='return_to' href="/">
             🔄 Vuelve al clima en tu ubicación 
           </a>
         </button>
