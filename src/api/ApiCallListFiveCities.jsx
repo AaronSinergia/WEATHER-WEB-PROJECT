@@ -30,7 +30,7 @@ const OneOfFiveCities = ({selectedCity, weatherData, setWeatherData}) => {
      {weatherData && (
        <div className='weather_today_data'>
           <p className='city_name'> {weatherData.name}</p>
-          <p className='temp'> {weatherData.main.temp}º</p>
+          <p className='temp'>{Math.floor(weatherData.main.temp)}º</p>
           <p className='weather_status'>{weatherData.weather[0].description.toUpperCase()}</p>
           <img className='weather_icon' src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt="weather_icon" />
           <p className='humidity'>HUMEDAD: {weatherData.main.humidity}%</p>

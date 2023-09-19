@@ -34,7 +34,7 @@ const ApiWeather = ({weatherToday, setWeatherToday}) => {
         });
       },
       (error) => {
-        const EnableLocationPlease = alert('Error en los permisos de geolocalización, actívalos en tu navegador')
+        alert('Error en los permisos de geolocalización, actívalos en tu navegador')
         console.error('Error en los permisos de geolocalización, actívalos en tu navegador:', error);
       }
     );
@@ -46,7 +46,7 @@ const ApiWeather = ({weatherToday, setWeatherToday}) => {
         {weatherToday && (
           <div className='weather_today_data'>
           <p className='city_name'> {weatherToday.name}</p>
-          <p className='temp'>{weatherToday.main.temp}º</p>
+          <p className='temp'>{Math.floor(weatherToday.main.temp)}º</p>
           <p className='weather_status'>{weatherToday.weather[0].description.toUpperCase()}</p>
           <img className='weather_icon' src={`http://openweathermap.org/img/w/${weatherToday.weather[0].icon}.png`} alt="weather_icon" />
           <p className='humidity'>HUMEDAD: {weatherToday.main.humidity}%</p>

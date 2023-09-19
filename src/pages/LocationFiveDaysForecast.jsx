@@ -15,15 +15,17 @@ const FiveDaysForecast = () => {
 
   return (
     <>
-      <header className='five_days_forecast'>
+      <header className='forecast_title'>
         CONSULTA DEL CLIMA A 5 DIAS VISTA
       </header>
       <React.Suspense fallback={<h2>Cargando...</h2>}>
         {renderedComp ? renderedComp : <FiveDaysApiLocation fiveDaysLocation={fiveDaysLocation} setFiveDaysLocation={setFiveDaysLocation}/>}
         <SelectedOneOfFiveCities selectedCity={selectedCity} setSelectedCity={setSelectedCity}/>
-        <a href="/five_days_forecast">
-            🔄 Vuelve a consultar el clima 5 días vista, en tu ubicación🔄
-        </a>
+        <button>
+          <a class='return_to' href="/five_days_forecast">
+              🔄 Vuelve al clima en tu ciudad 5 días vista
+          </a>
+        </button>
       </React.Suspense>
     </>
   )
