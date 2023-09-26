@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { getSomething } from '../apiFunction';
 
-const FiveDaysApiLocation = ({fiveDaysLocation, setFiveDaysLocation}) => {
+const FiveDaysApiLocation = ({ fiveDaysLocation, setFiveDaysLocation }) => {
     const WEATHER_API = 'https://api.openweathermap.org/';
     const WEATHER_API_KEY = '89428bf87e63fd4d8d642ac1cb2311a3';
     const [coords, setCoords] = useState({lat: null, lon: null});
@@ -9,20 +10,7 @@ const FiveDaysApiLocation = ({fiveDaysLocation, setFiveDaysLocation}) => {
         if (coords.lat !== null && coords.lon !== null) {
           const FORECAST_URL = `${WEATHER_API}data/2.5/forecast?lat=${coords.lat}&lon=${coords.lon}&appid=${WEATHER_API_KEY}&units=metric&lang=sp`;
     
-        fetch(FORECAST_URL)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error('La consulta sobre el clima de tu ciudad no es válida');
-            }
-            return response.json();
-          })
-          .then((data) => {
-            setFiveDaysLocation(data);
-            console.log(data)
-          })
-          .catch((error) => {
-            console.error('Fetch error:', error)
-          })
+          getSomething(FORECAST_URL, setFiveDaysLocation);
         }
       }, [coords, setCoords]);
     

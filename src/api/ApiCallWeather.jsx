@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { getSomething } from '../apiFunction';
 
 const ApiWeather = ({weatherToday, setWeatherToday}) => {
   const WEATHER_API = 'https://api.openweathermap.org/';
@@ -9,19 +10,7 @@ const ApiWeather = ({weatherToday, setWeatherToday}) => {
     if (coords.lat !== null && coords.lon !== null) {
       const WEATHER_URL = `${WEATHER_API}data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${WEATHER_API_KEY}&units=metric&lang=sp`;
 
-    fetch(WEATHER_URL)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('La consulta sobre el clima de tu ciudad no es válida');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setWeatherToday({ ...data, name: data.name });
-      })
-      .catch((error) => {
-        console.error('Fetch error:', error)
-      })
+      getSomething(WEATHER_URL, setWeatherToday);
     }
   }, [coords, setCoords]);
 

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { getSomething } from '../apiFunction';
 
 const SelectFiveDaysApi = ({selectedCity, weatherData, setWeatherData}) => {
   const WEATHER_API = 'https://api.openweathermap.org/';
@@ -8,20 +9,7 @@ const SelectFiveDaysApi = ({selectedCity, weatherData, setWeatherData}) => {
     if (selectedCity) {
       const FORECAST_URL = `${WEATHER_API}data/2.5/forecast?q=${selectedCity}&appid=${WEATHER_API_KEY}&units=metric&lang=sp`;
   
-    fetch(FORECAST_URL)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('La consulta sobre el clima de la ciudad escogida no es válida');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setWeatherData(data);
-        console.log(data)
-      })
-      .catch((error) => {
-        console.error('Fetch error:', error)
-      })
+      getSomething(FORECAST_URL, setWeatherData);
     }
   }, [selectedCity]);
 
